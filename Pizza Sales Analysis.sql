@@ -109,7 +109,7 @@ WITH Seasons As
  FROM Seasons
  GROUP BY Season
  ORDER BY Sales DESC
-     #Spring genrated the highest Sales.
+     #Spring generated the highest Sales.
 
 
 
