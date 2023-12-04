@@ -1,27 +1,27 @@
 #checking Columns for null values
 SELECT * 
 FROM`data model - pizza sales`
-where order_id and pizza_id is null;
+where order_id or pizza_id is null;
 #No null values for columns order_id and Pizza_id
 
 SELECT * 
 FROM`data model - pizza sales`
-where quantity and order_date is null;
+where quantity or order_date is null;
 # No null values for column Quantity and Order_date
 
 SELECT * 
 FROM`data model - pizza sales`
-where order_date and unit_price is null;
+where order_date or unit_price is null;
 # No null values for columns Order_date and unit_price
 
 SELECT * 
 FROM`data model - pizza sales`
-where total_price and pizza_size is null;
+where total_price or pizza_size is null;
 # No null values for columns total_price and pizza_size
 
 SELECT * 
 FROM`data model - pizza sales`
-where pizza_category and pizza_ingredients and pizza_name is null;
+where pizza_category or pizza_ingredients or pizza_name is null;
 #No null values for columns pizza_category, pizza_ingredients and pizza_name
 
 #ANALYSIS
