@@ -95,6 +95,20 @@ JOIN(SELECT avg(Sales) AS Avg_Sales
  on m.sales> a.Avg_Sales;
      # months of Jan, Mar, Apr, May, Jun, Jul, Aug, Nov got higher than average monthly Sales
 
+# month_to_month sales
+WITH monthly_sales AS
+     (SELECT month(order_date) as months,
+       round(sum(total_price))as Sales
+       FROM `data model - pizza sales`
+       GROUP BY months)
+       
+       Select months, sales,
+       sum(sales) over(order by months) as Month_to_month
+       from monthly_sales
+     
+	
+	     
+
 #Sales and Orders By Season
 WITH Seasons As
       (SELECT *,
