@@ -78,7 +78,7 @@ WITH monthly_sales as
        GROUP BY months)
  SELECT *,
     Lag(Sales) OVER(ORDER BY months) AS Previous_Month_Sales,
-    Sales-Lag(Sales) OVER(ORDER BY months) AS Monthly_Sales_Difference
+    Sales-Lag(Sales) OVER(ORDER BY months) AS Monthly_Sales_Difference,
     round((Sales-Lag(Sales) OVER(ORDER BY months))/(Lag(Sales) OVER(ORDER BY months))*100,2) As Percent_monthly_increase
  FROM monthly_sales;   
     
